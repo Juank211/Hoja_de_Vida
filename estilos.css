@@ -1,51 +1,196 @@
-body{
-    padding: 50px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(223, 222, 251);
-}
-h1{
-    color: rgb(133, 132, 133);
-    text-align: center;
-}
-
-h2{
-    text-align: center;
-}
-
-h3{
-    text-align: center;
-    background-color: gainsboro;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 10px;
+/* Design System Tokens */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #4a4a4a;
+    --accent-color: #0056b3;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+    --radius: 8px;
+    --max-width: 850px;
 }
 
-h4{
-    text-align: center;
+/* Base Reset & Stabilization */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-table{
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    /* Vertical Rhythm Base */
+    padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+/* Layout Wrapper - Centered Block Flow */
+.wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto; /* Natural Centering */
+    background: var(--card-bg);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+h1.header-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+h2.name {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Header Sections */
+.main-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.profile-container {
+    margin-bottom: var(--spacing-md);
+    display: block; /* Block flow */
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto; /* Centering image in block flow */
+    display: block;
+    border: 3px solid var(--bg-color);
+    box-shadow: 0 0 0 1px var(--border-color);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+}
+
+/* Content Structure */
+.summary {
+    font-size: 1.05rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: 0 var(--spacing-lg);
+    font-style: italic;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked by default */
+    gap: var(--spacing-lg);
+}
+
+.info-section {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Lists and Tables Styling */
+.data-table {
     width: 100%;
+    border-collapse: collapse;
 }
 
-th {
-    width: 70%;
+.data-table th {
+    width: 30%;
     text-align: left;
-
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: var(--spacing-xs) 0;
+    font-size: 0.9rem;
 }
 
-img{
-    width: 15%;
-    border-radius: 10%;
-
-}
-.contenedor{
-    text-align: center;
+.data-table td {
+    padding: var(--spacing-xs) 0;
+    color: var(--text-main);
 }
 
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
+.skills-list, .cert-list {
+    list-style: none;
+}
+
+.skills-list li, .cert-list li {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-list strong, .cert-list strong {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.skills-list span, .cert-list span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Vertical Rhythm: Section spacing */
+section + section {
+    margin-top: var(--spacing-lg);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for tablet/desktop */
+    }
+
+    .wrapper {
+        padding: var(--spacing-xl);
     }
 }
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: var(--spacing-md);
+    }
+
+    h2.name {
+        font-size: 1.8rem;
+    }
+}
+
