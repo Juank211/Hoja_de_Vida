@@ -1,4 +1,3 @@
-/* Design System Tokens */
 :root {
     --primary-color: #1a1a1a;
     --secondary-color: #4a4a4a;
@@ -17,7 +16,6 @@
     --max-width: 850px;
 }
 
-/* Base Reset & Stabilization */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,21 +27,18 @@ body {
     line-height: 1.6;
     color: var(--text-main);
     background-color: var(--bg-color);
-    /* Vertical Rhythm Base */
     padding: var(--spacing-xl) var(--spacing-sm);
 }
 
-/* Layout Wrapper - Centered Block Flow */
 .wrapper {
     max-width: var(--max-width);
-    margin: 0 auto; /* Natural Centering */
+    margin: 0 auto;
     background: var(--card-bg);
     padding: var(--spacing-xl);
     border-radius: var(--radius);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Typography Hierarchy */
 h1, h2, h3 {
     color: var(--primary-color);
     margin-bottom: var(--spacing-sm);
@@ -78,7 +73,6 @@ p {
     margin-bottom: var(--spacing-md);
 }
 
-/* Header Sections */
 .main-header {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -86,7 +80,7 @@ p {
 
 .profile-container {
     margin-bottom: var(--spacing-md);
-    display: block; /* Block flow */
+    display: block; 
 }
 
 .profile-img {
@@ -94,7 +88,7 @@ p {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    margin: 0 auto; /* Centering image in block flow */
+    margin: 0 auto; 
     display: block;
     border: 3px solid var(--bg-color);
     box-shadow: 0 0 0 1px var(--border-color);
@@ -108,7 +102,6 @@ p {
     margin: 0 auto var(--spacing-md);
 }
 
-/* Content Structure */
 .summary {
     font-size: 1.05rem;
     color: var(--secondary-color);
@@ -120,7 +113,7 @@ p {
 
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Stacked by default */
+    grid-template-columns: 1fr; 
     gap: var(--spacing-lg);
 }
 
@@ -128,7 +121,6 @@ p {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Lists and Tables Styling */
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -168,15 +160,13 @@ p {
     font-size: 0.95rem;
 }
 
-/* Vertical Rhythm: Section spacing */
 section + section {
     margin-top: var(--spacing-lg);
 }
 
-/* Responsive adjustments */
 @media (min-width: 768px) {
     .content-grid {
-        grid-template-columns: 1fr 1fr; /* Two columns for tablet/desktop */
+        grid-template-columns: 1fr 1fr; 
     }
 
     .wrapper {
